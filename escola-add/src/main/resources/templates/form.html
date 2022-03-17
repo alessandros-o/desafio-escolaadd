@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<title>Cadastro de Alunos</title>
+<link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"
+	rel="stylesheet" />
+<link th:href="@{/webjars/bootstrap/css/bootstrap-theme.min.css}"
+	rel="stylesheet" />
+</head>
+<body>
+	<div class="panel panel-default" style="margin: 20px">
+		<div class="panel-heading" style="margin: 20px 0">
+			<h1 class="panel-title">Cadastro de Alunos</h1>
+			<a th:href="@{/aluno/listaAlunos}">
+				<button class="btn btn-primary">Voltar lista alunos</button>
+			</a>
+		</div>
+		<form class="form-inline" action="#"
+			th:action="@{/aluno/cadastroAluno/salvar}" th:object="${aluno}"
+			method="POST">
+			<input type="hidden" id="id" th:field=*{id}> <input
+				type="text" th:field="*{nome}" placeholder="Nome do Aluno"
+				class="form-control mb-4 col-4" style="width: 30%"> <label
+				for="date">Data de Nascimento</label> <input type="date"
+				th:field="*{dataDeNascimento}" placeholder="Data Nascimento"
+				class="form-control mb-4 col-4" style="width: 30%">
+
+			<button type="submit" class="btn btn-info col-2">Salvar</button>
+		</form>
+
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<title>Cadastro de Alunos</title>
+<link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"
+	rel="stylesheet" />
+<link th:href="@{/webjars/bootstrap/css/bootstrap-theme.min.css}"
+	rel="stylesheet" />
+</head>
+<body>
+	<div class="panel panel-default" style="margin: 20px">
+		<div class="panel-heading">
+			<h1 class="panel-title">Alunos</h1>
+			<a th:href="@{/aluno/cadastroAluno}">
+				<button class="btn btn-primary">Cadastrar novos alunos</button>
+			</a>
+		</div>
+	</div>
+
+	<div class="panel-body" style="margin: 20px">
+		<h3>Lista de Alunos</h3>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Nome</th>
+					<th>Data Nascimento</th>
+					<th>Alterar Dados</th>
+					<th>Deletar</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="aluno:${aluno}">
+					<td><span th:text="${aluno.Id}"></span></td>
+					<td><span th:text="${aluno.nome}"></span></td>
+					<td><span
+						th:text="${#dates.format(aluno.dataDeNascimento, 'dd-MM-yyyy')}">
+					</span></td>
+					<td><a th:href="@{/aluno/cadastroAluno/{id}(id=${aluno.id})}">
+							<button class="btn btn-primary">alterar</button>
+					</a></td>
+					<td><a
+						th:href="${(#mvc.url('AC#removeAluno').arg(0, aluno.id)).build()}">
+							<button class="btn btn-danger">delete</button>
+					</a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+</body>
+</html>
