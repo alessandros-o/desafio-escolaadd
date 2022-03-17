@@ -19,11 +19,12 @@ Desafio de seleção empresa Add
 * Cadastro de escola
 * Cadastro de turma
 * Cadastro de endereço
-* Em cada entidade foram implementos todos os métodos para CRUD (Create, Remove, Update, GetById, GetAll)
-* De acordo com especificação do desafio foi criada tela de front-end apenas para exibir alunos e cadastrar alunos
-* Foram criados 2 templates ecom Thymeleaf: aluno.html retorna a relação de alunos / form.html é onde e feito o cadastro de alunos e alterações
+* Em cada entidade foram implementados todos os métodos para CRUD (Create, Remove, Update, GetById, GetAll)
+* Seguindo a especificação do desafio, foi criada tela de front-end apenas para exibir alunos e cadastrar alunos
+* Foram criados 2 templates com Thymeleaf: *aluno.html* retorna a relação de alunos / *form.html* é onde é feito o cadastro de alunos e alterações
 * Tanto o **create** quanto o **update** (métodos post e put) estão sendo realizados por um só método em **AlunoController** e no mesmo formulário (form.html)
 * Nas demais classes *Controller* tanto o **create** quanto o **update** (métodos post e put) foram implementados e funcionam separadamente
+* Informações do banco de dados H2 estão no application.properties
 
 ### Telas
 
